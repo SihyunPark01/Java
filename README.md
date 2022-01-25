@@ -54,20 +54,27 @@ Java basic syntax and concepts for interview
 >
 ### Generic
 > 컴파일 과정에서 객체의 타입체크를 해주는 기능
+> 
 > 객체의 타입안정성을 높이고 형변환의 번거로움을 줄여주어 코드가 간결해짐
+> 
 > 제네릭 사용법 <타입> : public class 클래스명 <T> {...} or public interface 인터페이스명 <T> {..}
 >
 > 클래스를 설계할 때 구체적인 타입을 명시하지 않고 타입 파라미터로 넣어두었다가 실제 설계한 클래스가 사용되어질 때 ExClassGeneric<String> exGeneric = new ExClassGeneric<>(); 이런식으로 구체적인 타입을 지정하면서 사용하면 타입 변환을 최소화 시킬 수 있음
 >
 ### Final
 > final class : 다른 클래스에서 상속 못함
+>
 > final method : 다른 메소드에서 오버라이딩 하지 못함
+>
 > final variable : 변하지 않는 상수값으로 생성됨
 >
 ### Access Modifier(접근 제어자)
 > public : 어떤 클래스, 패키지 에서도 접근 가능
+>
 > protected : 해당 패키지 내의 어떤 클래스에서도 접근 가능. 해당 클래스를 상속받은 외부 패키지에서도 접근 가능.
+>
 > default : 해당 패키지 내에서만 접근이 가능
+>
 > private : 정의된 해당 클래스 내에서만 접근이 가능
 >
 ### 
