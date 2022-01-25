@@ -1,0 +1,29 @@
+2562 최댓값
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args0{
+		
+		Scanner sc = new Scanner(System.in);
+		int [] arr = new int[9]; 
+
+		for (int i = 0; i < arr.length; i++){
+			arr[i]=sc.nextInt();
+		}
+
+		int max = arr[0]; //기준이 될 첫번째 값을 max에 넣음 
+		int index = 0; // 최대값의 위치를 알아낼 변수 생성
+
+		for(int i = 1; i < arr.length; i++){
+			if(arr[i] > max) {
+				max = arr[i];
+				index = i+1;
+			}
+		}
+
+		System.out.println(max);
+		System.out.println(index);
+	}
+}

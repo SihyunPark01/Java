@@ -1,0 +1,39 @@
+8958 OX퀴즈
+
+첫째줄 테스트케이스 개수
+OX퀴즈의 결과 "OOXXOXXOOO"
+문제를 맞은 경우 그 문제의 점수는 그 문제까지 연속된 O의 개수
+1+2+0+0+1+0+0+1+2+3 = 10점
+점수를 구하는 프로그램
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args){
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int t = sc.nextInt(); //테스트 케이스 개수
+		String [] arr = new String [t]; //테스트케이스개수만큼 OX스트링 배열에 담음
+		for(int i = 0; i < t; i++){
+			arr[i] = sc.next();
+		}
+
+		for(int i = 0; i < t; i++){
+			char[] arr2 = arr[i].toCharArray(); //OX문자열들을 toCharArray()로 문자별로 쪼개 다시 arr2라는 배열에 저장
+			int score = 0;
+			int plus = 1;
+
+			for(int k = 0; k < arr2.length; k++){
+				if(arr2[k] == 'O'){ //만약 O이면
+					score += plus; //1점씩 더해감
+					plus++; //그다음은 2점더해야하니까
+				} else { //만약 X면
+					plus = 1; //plus값을 1로 다시 초기화 
+				}
+				System.out.println(score);
+		}
+	}
+}
