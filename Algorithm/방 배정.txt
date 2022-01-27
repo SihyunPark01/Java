@@ -1,0 +1,41 @@
+import java.util.*;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
+public class Main {
+
+    public static void main(String[] args) {
+      
+        Scanner sc = new Scanner(System.in);
+      
+        int N = sc.nextInt();
+        int K = sc.nextInt();
+        int count = 0;
+        int[][] as= new int[6][2];
+
+        for (int i = 0 ; i<N ; i ++){
+           
+            int S = sc.nextInt();
+            int Y = sc.nextInt()-1;
+            as[Y][S]+=1;
+        }
+
+        for (int j = 0; j <6 ; j++) {
+           for (int j2= 0 ; j2< 2; j2 ++) {
+              if (as[j][j2]%K == 0) {
+                 count+=as[j][j2]/K;
+              }
+              else {
+                 count+=as[j][j2]/K+1;
+              }
+           }
+        }
+       System.out.println(count);       
+    }
+}
