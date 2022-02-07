@@ -1,0 +1,36 @@
+두개 뽑아서 더하기
+
+numbers라는 정수배열에서 서로 다른 두개의 수를 뽑아 더해서 만들 수 있는 
+모든 수를 배열에 오름차순으로 담아 return하는 solution 함수를 완성하시오
+
+<로직 생각>
+일단 결과값을 봤을 때 중복값이 없으므로 HashSet 선언을 떠올리자
+임의의 두 수를 뽑으려면 이중for문을 돌리는데
+두번째 for문의 j의 초기값은 i+1이여야 함
+바로 더한 값을 hashset에 담아주기
+hashset을 정렬하기 위해서는 arraylist구조로 변환해야 함
+Collections.sort()로 오름차순 정렬 !
+
+
+
+import java.util.*;
+
+class Solution {
+    public ArrayList<Integer> solution(int[] numbers) {
+        HashSet<Integer> set = new HashSet<>();
+        //배열에서 임의의 요소 2개를 뽑아내는 알고리즘 - 이중for문 or 백트래킹 알고리즘
+        //두 수를 더한 값 저장
+        for(int i =0; i < numbers.length; i++){
+            for(int j = i+1; j < numbers.length; j++){ //i보다 그 다음수니까 
+                //i랑 j를 더해서 바로 hashset에 저장해버리자
+                set.add(numbers[i]+numbers[j]);
+            }
+        }
+        //결과값은 중복허용안되니까 hashset에 담았지
+        
+        //마지막 결과값 담은 배열을 Arrays.sort()로 도출해라
+        ArrayList<Integer> list = new ArrayList<Integer>(set);
+        Collections.sort(list);
+        return list;
+    }
+}
