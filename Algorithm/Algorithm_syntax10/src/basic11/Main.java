@@ -15,8 +15,21 @@ public class Main {
 		
 		
 		for(int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-				System.out.printf("%4d", arr[i][j]);
+			
+			if ( i % 2 == 0) { //짝수행일때 열은 순서대로 올라감
+				for (int j = 0; j < n; j++) {
+					arr[i][j] = i*n+j+1;
+				}
+			}else { //홀수행일때 열은 거꾸로 내려감
+				for (int j = n-1; j >=0; j--) {
+					arr[i][j] = i*n+n-j;
+				}
+			}
+		}
+			
+			for (int i = 0; i < n; i++) {
+				for(int j = 0; j < n; j++) {
+					System.out.printf("%4d", arr[i][j]);
 			}System.out.println();
 		}
 	}
