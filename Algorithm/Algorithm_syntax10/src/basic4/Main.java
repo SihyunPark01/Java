@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		int inputNum = 25;
+		int inputNum = 25                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
 		int bin[] = new int[100];
 		
 		int i = 0;
