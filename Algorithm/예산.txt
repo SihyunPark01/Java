@@ -1,0 +1,43 @@
+S사에서는 각 부서에 필요한 물품을 지원해 주기 위해 부서별로 물품을 구매하는데 필요한 금액을 조사했습니다. 
+그러나, 전체 예산이 정해져 있기 때문에 모든 부서의 물품을 구매해 줄 수는 없습니다. 
+그래서 최대한 많은 부서의 물품을 구매해 줄 수 있도록 하려고 합니다.
+물품을 구매해 줄 때는 각 부서가 신청한 금액만큼을 모두 지원해 줘야 합니다. 
+예를 들어 1,000원을 신청한 부서에는 정확히 1,000원을 지원해야 하며, 1,000원보다 적은 금액을 지원해 줄 수는 없습니다.
+부서별로 신청한 금액이 들어있는 배열 d와 예산 budget이 매개변수로 주어질 때, 최대 몇 개의 부서에 물품을 지원할 수 있는지 return 하도록 solution 함수를 완성해주세요.
+
+d	budget	result
+[1,3,2,5,4]	9	3
+[2,2,3,3]	10	4
+
+<로직 생각>
+//먼저 오름차순으로 정렬하자 Arrays.sort()
+//작은 것들부터 순서대로 더했을때 경우의 수가 가장 많이 나오니까
+//for문 돌리면서 result변수 하나 선언해주고 합을 여기에 담아주자
+//만약 이 합이 budget보다 크면 i가 답이되고 break때려주면 된다
+//합이 budget보다 작거나 같으면 그 배열의 길이가 개수가 될 것이다
+
+import java.util.*;
+
+class Solution {
+    public int solution(int[] d, int budget) {
+        int answer = 0;
+        int result = 0;
+        //먼저 오름차순으로 정렬
+        Arrays.sort(d);
+        //작은 수 부터 더해야 가장 최대의 개수가 나옴
+        //d배열의 합이 budget보다 작거나 같아야 함
+        //즉 budget보다 크면 종료
+        
+        for(int i =0; i < d.length; i++){
+            result += d[i]; //아직 이 생각을 잘 못하겠다
+            if(result > budget){ //budget보다 커지면 i를 반환하고 밖으로 나오렴
+                answer = i;
+                break;
+            }
+        }
+        if (result <= budget){
+            answer = d.length;
+        }
+        return answer;
+    }
+}
