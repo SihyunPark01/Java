@@ -1,0 +1,7 @@
+A, B, C = map(int, input().split())
+
+mul = A*B*C
+result = list(str(mul))
+
+for i in range(10):
+	print(result.count(str(i)))

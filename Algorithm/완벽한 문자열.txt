@@ -1,0 +1,27 @@
+# 모든 알파벳을 사용하는 문자열을 완벽한 문자열이라고 한다.
+# 문자열 sentence가 매개변수로 주어질 때, 완벽한 문자열을 만드는 데 필요한 문자들을 return 하도록 solution함수를 완성하기
+# 알파벳, 공백, 아스키코드로 이루어져 있음
+# 알파벳 소문자들을 오름차순으로 정렬 후 하나의 문자열로 합쳐서 return 하시오
+# sentence가 완벽한 문자열인 경우 perfect를 return하시오
+
+from string import ascii_lowercase
+def solution(sentence):
+    sentence = sentence.lower()
+    alphabet_list = list(ascii_lowercase)
+    
+    for i in range(len(sentence)):
+        if sentence[i] in alphabet_list:
+            alphabet_list.remove(sentence[i])
+    if len(alphabet_list) == 0:
+        return "perfect"
+    answer = "".join(alphabet_list)
+    return answer
+   
+
+x = solution("HEISaskjfdpquwekgl")
+print(x)
+		
+	
+	
+
+
